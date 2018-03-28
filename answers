@@ -1,0 +1,76 @@
+---------- Table Person Start ----------
+1. create table Person (
+   id integer primary key autoincrement,
+   name varchar(50),
+   age integer,
+   height integer,
+   city str,
+   favorite_color str
+   )
+  
+2. insert into Person (name, age, height, city, favorite_color) VALUES ("Destiny Ross", 23, 150, "Akron", "purple"), 
+   ("Shanelle", 26, 170, "Amarillo", "purple"), ("Jennifer Lindsey", 27, 170, "Philadelphia", "red"), 
+   ("Carina Studer-Dyer", 24, 165, "Akron", "blue"), ("Fake Name", 27, 170, "Philadelphia", "lemon chiffon")
+  
+3.  SELECT * FROM Person ORDER BY height DESC;
+4.  SELECT * FROM Person ORDER BY height ASC;
+5.  SELECT * FROM Person ORDER BY age DESC;
+6.  SELECT * FROM Person WHERE age > 20;
+7.  SELECT * FROM Person WHERE age = 18;
+8.  SELECT * FROM Person WHERE age < 20 OR age > 30;
+9.  SELECT * FROM Person WHERE age != 27
+10. SELECT * FROM Person WHERE favorite_color = 'red';
+11. SELECT * FROM Person WHERE favorite_color != 'red' AND favorite_color != 'blue';
+12. SELECT * FROM Person WHERE favorite_color = 'orange' or favorite_color = 'green';
+13. SELECT * FROM Person WHERE favorite_color IN ('orange', 'green', 'blue');
+14. SELECT * FROM Person WHERE favorite_color IN ('yellow', 'purple');
+---------- Table Person End ----------
+
+---------- Table Orders Start ----------
+1.  CREATE TABLE Orders (
+    person_id integer,
+    product_name str,
+    product_price float,
+    quantity integer
+    );
+    
+2.  INSERT INTO Orders ( person_id, product_name, product_price, quantity ) 
+VALUES (0001, 'Keyan Cofee', 18.46, 2),
+(0002, 'Arabica Cofee', 21.73, 3), 
+(0003, 'Tanzanian Cofee', 24.23, 3),  
+(0004, 'Tanzanian Tea', 15.92, 6), 
+(0005, 'Folgers', 3.50, 1)
+  
+3.  SELECT * FROM Orders;
+4.  SELECT sum(quantity) FROM Orders;
+5.  SELECT sum(product_price * quantity) FROM Orders; 
+6.  SELECT sum(product_price * quantity) FROM Orders WHERE PersonID = 0001;
+---------- Table Orders End ----------
+
+---------- Table Artist Start ----------
+1.  INSERT INTO Artist (Name) VALUES ('Dessa'), ('Lights'), ('Doomtree');
+2.  SELECT * FROM Artist ORDER BY Name DESC LIMIT 10;
+3.  SELECT * FROM Artist ORDER BY Name ASC LIMIT 5;
+4.  SELECT * FROM Artist Name LIKE 'Black%';
+5.  SELECT * FROM Artist Name LIKE '%Black%';
+---------- Table Artist End ----------
+
+---------- Table Employee Start ----------
+1.  SELECT FirstName, LastName FROM Employee WHERE City = 'Calgary';
+2.  SELECT FirstName, LastName, Max(BirthDate) FROM Employee;
+3.  SELECT FirstName, LastName, Min(BirthDate) FROM Employee;
+4.  SELECT * FROM Employee WHERE FirstName = 'Nancy' AND LastName = 'Edwards'.  -- => EmployeeID = 2
+5.  SELECT * FROM Employee WHERE ReportsTo = 2
+6.  SELECT COUNT(*) FROM Employee WHERE City = "Lethbridge";
+---------- Table Employee End ----------
+
+---------- Table Invoice Start ----------
+1.  SELECT count(*) FROM Invoice WHERE BillingCountry = 'USA';
+2.  SELECT Max(Total) FROM Invoice;
+3.  SELECT Min(Total) FROM Invoice;
+4.  SELECT * From Invoice WHERE Total > 5;
+5.  SELECT count(*) FROM Invoice WHERE Total > 5;
+6.  SELECT count(*) FROM Invoice WHERE BillingState IN ('Ca', 'Tx', 'Az');
+7.  SELECT Avg(Total) FROM Invoice;
+8.  SELECT SUM(Total) FROM Invoice;
+---------- Table Invoice End ----------
